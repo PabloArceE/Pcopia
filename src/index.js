@@ -2,6 +2,7 @@ import './style.css';
 import { buscarItemCallback, items } from './js/baseDeDatos';
 import { buscarItemPromesa } from './js/promesas';
 import { promiseLenta, promiseMedia, promiseRapida } from './js/promiseRace';
+import { buscarItemAsync } from './js/async'
 
 // La función buscarItem recibe dos argumentos, el id de un objeto de una base de datos y una función callback que en este caso nos indica de la existencia o no del objeto en la base de datos.
 // Haciendo uso de los argumentos standars de los callbacks lo primero que reciben estas funciones son un error y luego el argumento que se necesita utilizar.
@@ -47,3 +48,7 @@ Promise.race([promiseRapida, promiseLenta, promiseMedia])
     .then(console.log)
     .catch(console.error)
 
+// Comienzo del ejercicio async
+buscarItemPromesa('item1').then(console.log);
+buscarItemAsync('item1').then(console.log);
+buscarItemAsync('item10').then(console.log);

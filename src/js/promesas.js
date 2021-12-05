@@ -9,5 +9,4 @@ export const buscarItemPromesa = (id) => {
         (item) ? fullfiled(item) : reject(`No existe el item con el id: ${id}`);
 
     });
-
 }
